@@ -1,0 +1,186 @@
+Ejercicio 1
+//Crear un subprograma que reciba como entrada un valor entero e indique si se trata de un número par o impar. 
+//¿Qué tipo de subprograma crees más apropiado, procedimiento o función? Escribe también un programa principal para probar el subprograma.
+
+Algoritmo valorNum
+	Escribir "Ingrese el valor del numero"
+	leer num_Ingresado
+	datos(num_Ingresado)
+FinAlgoritmo
+
+SubProceso datos(num_Ingresado)
+	
+	Definir aux Como Entero
+	
+	ParImpar=num_Ingresado%2
+	
+	Si ParImpar==0 Entonces
+		Escribir "Es par"
+	FinSi
+	
+	Si ParImpar<>0 Entonces
+		
+		Escribir "Es impar"
+	FinSi
+FinSubProceso
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+Ejercicio 2
+
+//Escribe un procedimiento que escriba en pantalla los n primeros números primos. El procedimiento recibe n como parámetro.
+
+Algoritmo num_primos
+	
+	Definir num Como Entero
+	Definir cantNumeros Como Entero
+	
+	Escribir "Cuantos numeros primos quiere ver?"
+	leer cantNumeros
+	
+	Para num<-2 Hasta cantNumeros
+		x<-2
+		bandera<-Verdadero
+		
+		Mientras bandera=Verdadero y x<num Hacer
+			Si num%x=0 Entonces
+				bandera<-Falso
+			SiNo
+				x<-x+1
+			FinSi
+		FinMientras
+		
+		Si bandera=Verdadero Entonces
+			Escribir "El numero ", num, " es primo."
+		FinSi
+		
+	FinPara
+
+FinAlgoritmo
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+Ejercicio 3
+
+//Implemente un programa con subprogramas que, leyendo el nombre de tres alumnos y la nota obtenida por cada uno en una asignatura, muestre por pantalla la media de las notas.
+
+
+Algoritmo nombreAlumno
+	
+	Definir alumno1, alumno2 Como Caracter
+	Escribir "Ingrese nombre del alumno"
+	Leer alumno1
+	Escribir "Ingrese nombre del alumno"
+	Leer alumno2
+	
+	notasAlumno(alumno1, alumno2) 
+FinAlgoritmo
+
+SubProceso notasAlumno(alumno1, alumno2) 
+	
+	Definir notas Como Entero
+	Definir i Como Entero
+	
+	Para i=0 Hasta 0 Con Paso 1 Hacer
+		Escribir "Ecriba las notas del alumno 1"
+		leer notasA1
+		Leer notasA11
+		Leer notasA111
+	FinPara
+	
+	Para i=0 Hasta 0 Con Paso 1 Hacer
+		Escribir "Ecriba las notas del alumno 2"
+		leer notasA2
+		Leer notasA22
+		Leer notasA222
+	FinPara
+	
+	suma=notasA1+notasA11+notasA111
+	mediaNotas=suma/3
+	suma2=notasA2+notasA22+notasA222
+	mediaNotas2=suma2/3
+	
+
+	Escribir "El alumno ", alumno1, " tiene una media de nota de ", mediaNotas
+	Escribir "El alumno ", alumno2, " tiene una media de nota de ", mediaNotas2
+
+
+FinSubProceso
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+Ejercicio 4
+
+//Cear un procedimiento que intercambie los valores de dos variables. Realizar un programa que llame a este procedimiento para que intercambie dos valores leídos desde el teclado y los muestre por pantalla
+Algoritmo Datos
+	Definir valor1inicial, valor2inicial Como Entero
+	
+	Escribir "Ingrese dos valores"
+	Leer valor1inicial
+	Leer valor2inicial
+	intercambioValor(valor1inicial, valor2inicial)
+	
+FinAlgoritmo
+
+SubAlgoritmo  intercambioValor(valor1inicial, valor2inicial)
+	
+	Definir valor1final, valor2final Como Entero
+	
+	valor1final=valor2inicial
+	valor2final=valor1inicial
+	
+	Escribir "El valor ", valor1inicial, " cambiará por el valor ", valor2inicial
+	Escribir "Quedó así: " valor1final, " y ", valor2final
+FinSubAlgoritmo
+
+//////////////////////////////////////////////////////////////////////////////////////////
+Ejercicio 5
+
+//Escribe una función llamada media2 que reciba dos reales y devuelva el real que representa el promedio de ambos números. 
+//Escribe luego un programa utilizando la función anterior que lea dos reales por teclado y devuelva la media aritmética de ambos.
+Algoritmo  RealesDefinidos
+	Definir media2, num1, num2, suma Como Real
+	num1=3
+	num2=8
+	
+	suma=num1+num2
+	media2=suma/2
+	
+	Escribir media2
+FinAlgoritmo
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+SubAlgoritmo realesPorTeclado
+	Definir media2, suma, num1, num2 Como Real
+	
+	Escribir "Ingrese dos numeros reales"
+	Leer num1
+	Leer num2
+	
+	suma=num1+num2
+	media2=suma/2
+	
+	Escribir media2
+	
+FinSubAlgoritmo
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Ejercicio 6
+
+//Escribe una función que reciba un número como parámetro y devuelva el número que se obtiene al invertir el orden de los dígitos del número original. 
+//Por ejemplo, si la función recibe el número 356 devolverá el número 653.
+Algoritmo Datos
+	Definir num, i, aux Como Entero
+	Escribir "Ingrese el numero a invertir"
+	Leer num
+	
+	numInvertidos(num,i,aux)
+	
+FinAlgoritmo
+
+SubProceso numInvertidos(num,i,aux)
+	i=0
+	Mientras num<>0 Hacer
+		aux=num % 10
+		i=(i*10) + aux
+		num=trunc(num/10)
+		
+	FinMientras
+	Escribir "El numero invertido quedo asi: ", i
+FinSubProceso
